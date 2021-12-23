@@ -1,0 +1,37 @@
+{
+    "name": "node-server",
+    "version": "1.0.0",
+    "description": "",
+    "main": "dist/app.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "build:assets": "npm run clean && tsc && npm run assets",
+        "build": "npm run clean && tsc && npm run public",
+        "assets": "cp -a ./src/assets ./dist/",
+        "clean": "rm -rf ./dist",
+        "serve": "node ./dist/app.js",
+        "start": "npm run serve",
+        "build:tsc": "tsc",
+        "dev": "nodemon dist/app.js",
+        "public": "cp -a ./src/public ./dist/"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "devDependencies": {
+        "@types/body-parser": "^1.19.2",
+        "@types/express": "^4.17.13",
+        "@types/node": "^17.0.2",
+        "nodemon": "^2.0.15",
+        "typescript": "^4.5.4"
+    },
+    "dependencies": {
+        "body-parser": "^1.19.1",
+        "class-transformer": "^0.5.1",
+        "class-validator": "^0.13.2",
+        "express": "^4.17.2",
+        "reflect-metadata": "^0.1.13",
+        "routing-controllers": "^0.9.0",
+        "typedi": "^0.10.0"
+    }
+}
